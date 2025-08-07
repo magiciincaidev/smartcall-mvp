@@ -1,0 +1,78 @@
+/* Lightning Design System Custom Styles */
+/* Note: SLDS CSS should be imported separately or via CDN to avoid build issues */
+
+/* Custom overrides for SmartCall MVP */
+:root {
+  --slds-c-button-brand-color-background: #10B981;
+  --slds-c-button-brand-color-background-hover: #059669;
+  --slds-c-button-destructive-color-background: #EF4444;
+  --slds-c-button-destructive-color-background-hover: #DC2626;
+}
+
+/* Call button animations */
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.call-button-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Incoming call animation */
+@keyframes ring {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  10%, 30% {
+    transform: rotate(14deg);
+  }
+  20%, 40% {
+    transform: rotate(-14deg);
+  }
+}
+
+.incoming-call-ring {
+  animation: ring 1.5s infinite;
+}
+
+/* Typing animation for transcription */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+.typing-animation {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 0.5s steps(40, end);
+}
+
+/* Custom scrollbar for conversation log */
+.conversation-log::-webkit-scrollbar {
+  width: 8px;
+}
+
+.conversation-log::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+.conversation-log::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+.conversation-log::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
